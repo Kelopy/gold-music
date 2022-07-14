@@ -1,4 +1,4 @@
-const { CommandInteraction, MessageEmbed } = require('discord.js')
+const { CommandInteraction, MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: "music",
@@ -15,6 +15,17 @@ module.exports = {
             description: "alter the volume",
             type: "SUB_COMMAND",
             options: [{ name: "percent", description: "10 = 10%", type: "NUMBER", required: true }]
+        },
+        {
+            name: "loop",
+            description: "repeat the queue/song",
+            type: "SUB_COMMAND",
+            options: [{ name: "mode", description: "select an option", type: "STRING", required: true, 
+            choices: [
+                {name: "off", value: "off"},
+                {name: "song", value: "song"},
+                {name: "queue", value: "queue"}
+            ] }]
         },
         {
             name: "settings",
@@ -54,6 +65,7 @@ module.exports = {
                     client.distube.play( VoiceChannel, options.getString("query"), {textChannel: channel, member: member });
                     return interaction.reply({content: "✅ Request Received"});
                 }
+
                 case "volume" : {
                     const Volume = options.getNumber("percent");
 
@@ -63,6 +75,35 @@ module.exports = {
                     client.distube.setVolume(VoiceChannel, Volume);
                     return interaction.reply({content: `🔊 Volume has been set to \`${Volume}%\``});
                 }
+
+                case "loop" : {
+                    const queue = await client.distube.getQueue(VoiceChannel);
+
+                    if(!queue)
+                    return interaction.reply({content: "⛔ There is no queue."});
+
+                    switch(options.getString("mode")){
+
+                        case "off" : {
+                            mode = 0
+                            queue.setRepeatMode(mode);
+                            return interaction.reply({content: "🔁 Looping has been disabled."});
+                        }
+                        case "song" : {
+                            mode = 1
+                            queue.setRepeatMode(mode);
+                            return interaction.reply({content: "🔁 **Song** is now being looped."});
+                        }
+                        case "queue" : {
+                            mode = 2
+                            queue.setRepeatMode(mode);
+                            return interaction.reply({content: "🔁 **Queue** is now being looped."});
+                        }
+                        
+                    }
+
+                }
+
                 case "settings" : {
                     const queue = await client.distube.getQueue(VoiceChannel);
 

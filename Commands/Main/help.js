@@ -13,7 +13,7 @@ module.exports = {
 			.addComponents(
                 new MessageButton()
                 .setLabel("GitHub")
-                .setURL("https://github.com/Kelopy")
+                .setURL("https://github.com/Kelopy/gold-music")
                 .setStyle('LINK'),
                 new MessageButton()
                 .setCustomId("contact-dev")
@@ -28,7 +28,8 @@ module.exports = {
         .addFields(
             { name: "Getting Started", value: "use `/music play <song/url>` while in a voice channel to get started!" },
             { name: "Volume", value: "use `/music volume <volume>` to change the volume if it's too high for you!" },
-            { name: "Settings", value: "`/music settings queue`\n`/music settings skip`\n`/music settings pause`\n`/music settings resume`\n`/music settings stop`" }
+            { name: "Loop", value: "use `/music loop <mode>` to loop the song/queue if you really like it that much!" },
+            { name: "Settings", value: "`/music settings queue` **-** show the queue\n`/music settings skip` **-** skip to the next song\n`/music settings pause` **-** pause the current song\n`/music settings resume` **-** resume the current song\n`/music settings stop` **-** stop the music" }
         )
         .setFooter({text: "Thank you for using Gold Music :D", iconURL: "https://vignette.wikia.nocookie.net/slime-rancherr/images/0/0f/Gold_Slime.png/revision/latest?cb=20170710212538&path-prefix=pl"})
 

@@ -18,7 +18,7 @@ module.exports = async (client, PG, Ascii) => {
             client.on(event.name, (...args) => event.execute(...args, client));
         };
 
-        await Table.addRow(event.name, "✔ Successful")
+        await Table.addRow(event.name, "🔹 Successful")
 
     })
 
