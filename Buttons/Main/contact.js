@@ -1,5 +1,4 @@
-const { CommandInteraction, MessageEmbed, User } = require('discord.js');
-const { isRecord } = require('distube');
+const { CommandInteraction, MessageEmbed } = require('discord.js');
 
 module.exports = {
     id: "contact-dev",
