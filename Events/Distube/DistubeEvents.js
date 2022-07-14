@@ -2,11 +2,9 @@ const client = require('../../Structures/index');
 const { MessageEmbed } = require('discord.js');
 
 const status = queue =>
-  `Volume: \`${queue.volume}%\` | Loop: \`${queue.repeatMode ? (queue.repeatMode === 2 ? 'Queue' : 'Song') : 'Off'}\``
-
-  //  `Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.join(', ') || 'Off'}\` | Loop: \`${
-  //  queue.repeatMode ? (queue.repeatMode === 2 ? 'All Queue' : 'This Song') : 'Off'
-  //  }\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
+   `Volume: \`${queue.volume}%\` | Filter: \`${queue.filters.join(', ') || 'Off'}\` | Loop: \`${
+   queue.repeatMode ? (queue.repeatMode === 2 ? 'All Queue' : 'This Song') : 'Off'
+   }\` | Autoplay: \`${queue.autoplay ? 'On' : 'Off'}\``
 
   client.distube
 
@@ -39,7 +37,7 @@ const status = queue =>
     console.error(e)
   })
 
-  .on('empty', channel => channel.send({embeds: [new MessageEmbed()
+  .on('empty', queue => queue.textChannel.send({embeds: [new MessageEmbed()
     .setColor("AQUA")
     .setDescription('Voice channel is empty! dipping...')
     ]})

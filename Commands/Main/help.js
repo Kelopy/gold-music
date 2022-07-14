@@ -28,8 +28,8 @@ module.exports = {
         .addFields(
             { name: "Getting Started", value: "use `/music play <song/url>` while in a voice channel to get started!" },
             { name: "Volume", value: "use `/music volume <volume>` to change the volume if it's too high for you!" },
-            { name: "Loop", value: "use `/music loop <mode>` to loop the song/queue if you really like it that much!" },
-            { name: "Settings", value: "`/music settings queue` **-** show the queue\n`/music settings skip` **-** skip to the next song\n`/music settings pause` **-** pause the current song\n`/music settings resume` **-** resume the current song\n`/music settings stop` **-** stop the music" }
+            { name: "Stop", value: "use `/music stop` emergency!! stop the music!" },
+            { name: "Settings", value: "`/music settings queue` **-** show the queue\n`/music settings skip` **-** skip to the next song\n`/music settings pause` **-** pause the current song\n`/music settings resume` **-** resume the current song\n`/music settings stop` **-** stop the music\n`/music settings shuffle` **-** shuffle the queue\n`/music settings repeat` **-** loop the current song/queue\n`/music settings addrelatedsong` **-** add a related song" }
         )
         .setFooter({text: "Thank you for using Gold Music :D", iconURL: "https://vignette.wikia.nocookie.net/slime-rancherr/images/0/0f/Gold_Slime.png/revision/latest?cb=20170710212538&path-prefix=pl"})
 
