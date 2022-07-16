@@ -18,7 +18,7 @@ const { SpotifyPlugin } = require('@distube/spotify');
 
 client.distube = new DisTube(client, {
     emitNewSongOnly: true,
-    leaveOnFinish: true,
+    leaveOnFinish: false,
     emitAddSongWhenCreatingQueue: false,
     plugins: [new SpotifyPlugin()]
 });

@@ -47,8 +47,9 @@ const status = queue =>
     message.channel.send(`⛔ | No result found for \`${query}\`!`)
   )
 
-  .on('finish', queue => queue.textChannel.send({embeds: [new MessageEmbed()
-    .setColor("GREEN")
-    .setDescription('Finished playing, leaving the call...')
-    ]})
-  )
+  // .on('finish', queue => queue.textChannel.send({embeds: [new MessageEmbed()
+  //   .setColor("GREEN")
+  //   .setDescription('Finished playing, leaving the call...')
+  //   ]})
+  // )
+  
