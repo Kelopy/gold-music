@@ -1,6 +1,5 @@
 # Gold Music
 
-### Usage<br>
 `/music play <query>` to get started!<br>
 
 - If you don't know what your doing use `/help`
