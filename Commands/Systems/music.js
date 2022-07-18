@@ -16,6 +16,11 @@ module.exports = {
             type: "SUB_COMMAND"
         },
         {
+            name: "skip",
+            description: "skip a song",
+            type: "SUB_COMMAND"
+        },
+        {
             name: "volume",
             description: "alter the volume",
             type: "SUB_COMMAND",
@@ -83,6 +88,21 @@ module.exports = {
 
                     await queue.stop(VoiceChannel);
                     return interaction.reply({content: "⏹ Song has been stopped."});
+                }
+
+                case "skip" : {
+                    const queue = await client.distube.getQueue(VoiceChannel);
+
+                    if(!queue)
+                    return interaction.reply({content: "⛔ There is no queue."});
+
+                    try {
+                        await queue.skip(VoiceChannel);
+                        return interaction.reply({content: "⏭ Song has been skipped."});
+                    } catch(error) {
+                        console.log(error);
+                    }
+
                 }
 
                 case "volume" : {

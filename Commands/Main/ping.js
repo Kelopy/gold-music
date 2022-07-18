@@ -1,4 +1,4 @@
-const { CommandInteraction, Client, MessageEmbed } = require('discord.js');
+const { CommandInteraction } = require('discord.js');
 
 module.exports = {
     name: "ping",
@@ -9,9 +9,9 @@ module.exports = {
      */
     execute(interaction, client){
         const ping = Math.round(client.ws.ping);
-        const pingbed = new MessageEmbed()
-        .setDescription(`Current latency: **${ping}ms**`)
-
-        interaction.reply({embeds: [pingbed]});
+        interaction.reply({
+            content: `**Latency**: \`${ping}ms\``, 
+            ephemeral: true
+        });
     }
-}   
+}

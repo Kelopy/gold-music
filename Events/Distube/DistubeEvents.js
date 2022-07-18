@@ -39,7 +39,7 @@ const status = queue =>
 
   .on('empty', queue => queue.textChannel.send({embeds: [new MessageEmbed()
     .setColor("AQUA")
-    .setDescription('Voice channel is empty! dipping...')
+    .setDescription('Voice channel is empty, dipping...')
     ]})
   )
 
@@ -47,9 +47,8 @@ const status = queue =>
     message.channel.send(`⛔ | No result found for \`${query}\`!`)
   )
 
-  // .on('finish', queue => queue.textChannel.send({embeds: [new MessageEmbed()
-  //   .setColor("GREEN")
-  //   .setDescription('Finished playing, leaving the call...')
-  //   ]})
-  // )
-  
+  .on('finish', queue => queue.textChannel.send({embeds: [new MessageEmbed()
+    .setColor("GREEN")
+    .setDescription('No more tracks are playing...')
+    ]})
+  )
