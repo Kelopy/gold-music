@@ -4,7 +4,7 @@
 
 - If you don't know what your doing use `/help`
 
-- Invite Link https://discord.com/api/oauth2/authorize?client_id=996851133857402991&permissions=8&scope=bot%20applications.commands
+- THIS BOT HAS BEEN ABANDONED AND IS NO LONGER BEING UPDATED
 
 ##### THANK YOU FOR USING GOLD MUSIC :D
 
